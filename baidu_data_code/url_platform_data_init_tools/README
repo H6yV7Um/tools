@@ -1,0 +1,23 @@
+﻿
+如何运行：
+step 1：首先修改 config目录下的db.conf和data.conf文件
+	db.conf文件：修改mysql数据库的数据库名、机器信息以及用户名和密码信息；
+	data.conf文件(格式含义和ini文件一样)：配置数据文件的存放位置和是否允许开关
+	【data.conf文件的示例】：
+	[rule]-----------数据文件data目录的rule目录下
+	prefix=
+	mysql_table=clnd_android_app
+	filter=test
+	enable=on
+	各字段说明：
+	prefix:表示时间文件名前缀
+	mysql_table：表示表名
+	filter：表示tasks目录下filter.py文件中对应的function名
+	enable:表示运行开关，on表示运行，off表示不允许
+
+step 2：
+	在bin目录下运行run.sh文件，查看日志提示。
+	
+	
+第一次运行的时候可能value信息不能导入，
+需要修改data.conf文件，把rule中的enable字段改为off。
