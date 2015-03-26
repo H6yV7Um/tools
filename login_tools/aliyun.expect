@@ -1,0 +1,17 @@
+#!/usr/bin/bash
+##!/usr/bin/expect
+
+set login_name [lindex $argv 0]  
+set host_name [lindex $argv 1] 
+set password [lindex $argv 2] 
+
+
+set timeout 30
+#spawn ssh -l root 121.40.211.206
+spawn ssh -l $login_name $host_name
+expect "password:"
+send "$password\r"
+interact
+
+
+
